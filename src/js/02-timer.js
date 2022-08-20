@@ -13,6 +13,7 @@ const refs = {
 };
 
 let selectedTime = null;
+refs.btnStart.disabled = true;
 
 function convertMs(ms) {
   const second = 1000;
@@ -48,6 +49,7 @@ const options = {
       refs.btnStart.disabled = true;
     } else {
       selectedTime = selectedDates[0];
+      refs.btnStart.disabled = false;
     }
   },
 };
@@ -73,9 +75,8 @@ function onStartCountdown() {
 
     if ((days === 0) & (hours === 0) & (minutes === 0) & (seconds === 0)) {
       clearInterval(selectedTime);
-
-      refs.btnStart.disabled = true;
-      refs.input.disabled = true;
+      refs.btnStart.disabled = false;
+      refs.input.disabled = false;
     }
   }, 1000);
 }
