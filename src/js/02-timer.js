@@ -75,8 +75,8 @@ function onStartCountdown() {
 
     if (date - Date.now() < 1000) {
       clearInterval(selectedTime);
-      refs.btnStart.disabled = false;
-      refs.input.disabled = false;
+      refs.btnStart.disabled = true;
+      refs.input.disabled = true;
     }
   }, 1000);
 }
